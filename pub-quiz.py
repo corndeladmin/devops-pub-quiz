@@ -34,9 +34,3 @@ for question in quiz_questions:
 
 # Goodbye message
 print("Thanks very much for playing the Pub Quiz!")
-
-
-
-
-
-
