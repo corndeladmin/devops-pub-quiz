@@ -1,3 +1,4 @@
+from inputimeout import inputimeout
 import questions
 
 # Welcome message for the quiz
@@ -14,13 +15,17 @@ for question in quiz_questions:
         print(option)
     
     # Get the user's answer
-    user_answer = input("Your answer (A, B, C, D): ").strip().upper() # Ensuring the input is uppercase for comparison
-    
-    # Check if the answer is correct
-    if user_answer == question["answer"]:
-        print("Correct!")
-    else:
-        print(f"Wrong! The correct answer was {question['answer']}.")
+    try: 
+        user_answer = inputimeout("Your answer (A, B, C, D): ", 5).strip().upper() # Ensuring the input is uppercase for comparison
+        # Check if the answer is correct
+        if user_answer == question["answer"]:
+            print("Correct!")
+        else:
+            print(f"Wrong! The correct answer was {question['answer']}.")
+    except: 
+        time_over = 'Your time is over!'
+        print("\n I'm sorry, you're just really slow at this \n") 
+
 
 # Goodbye message
 print("Thanks very much for playing the Pub Quiz!")
