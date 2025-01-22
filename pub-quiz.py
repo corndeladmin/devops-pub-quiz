@@ -1,20 +1,10 @@
+import questions
+
 # Welcome message for the quiz
 print("Welcome to the Pub Quiz!")
 
 # List of questions, options, and answers
-quiz_questions = [
-    {
-        "question": "What is the capital of France?",
-        "options": ["A) London", "B) Paris", "C) Berlin", "D) Madrid"],
-        "answer": "B"
-    },
-    {
-        "question": "What is 2 + 2?",
-        "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
-        "answer": "B"
-    },
-    # Learners can add more questions here following the same structure
-]
+quiz_questions = questions.questions
 
 # Loop through each question
 for question in quiz_questions:
