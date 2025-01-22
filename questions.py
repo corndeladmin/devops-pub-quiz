@@ -10,8 +10,8 @@ questions = [
         "answer": "B"
     },
      {
-        "question": "Who won the FIFA World Cup in 2022?",
-        "options": ["A) France", "B) Argentina", "C) Croatia", "D) Uruguay"],
+        "question": "Who won the Women's Euro's in 2022?",
+        "options": ["A) France", "B) England", "C) Croatia", "D) Uraguay"],
         "answer": "B"
     },
     # Learners can add more questions here following the same structure
