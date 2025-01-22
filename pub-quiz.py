@@ -1,6 +1,7 @@
 from inputimeout import inputimeout
 import random
 import questions
+import time    
 
 # Welcome message for the quiz
 print("Welcome to the Pub Quiz!")
@@ -22,11 +23,17 @@ for question in quiz_questions:
     
     # Get the user's answer
     try: 
+        time_to_answer = generate_random_timeout()
+        time_before = int(time.time())
         user_answer = inputimeout("Your answer (A, B, C, D): ", generate_random_timeout()).strip().upper() # Ensuring the input is uppercase for comparison
+        time_after = int(time.time())
         # Check if the answer is correct
         if user_answer == question["answer"]:
             print("Correct!")
-            users_score += 1
+            users_score += time_to_answer - (time_after - time_before)
+            print("Points = ", users_score)
+            time.sleep(1)
+            print()
         else:
             print(f"Wrong! The correct answer was {question['answer']}.")
     except: 
