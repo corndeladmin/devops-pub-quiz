@@ -1,6 +1,7 @@
 from inputimeout import inputimeout
 import random
 import questions
+import time    
 
 # Welcome message for the quiz
 print("Welcome to the Pub Quiz!")
@@ -9,6 +10,7 @@ print("Welcome to the Pub Quiz!")
 quiz_questions = questions.questions
 
 users_score = 0
+max_points = 0
 
 def generate_random_timeout(min=5, max=10):
     return random.randint(min, max)
@@ -22,11 +24,18 @@ for question in quiz_questions:
     
     # Get the user's answer
     try: 
+        time_to_answer = generate_random_timeout()
+        time_before = int(time.time())
         user_answer = inputimeout("Your answer (A, B, C, D): ", generate_random_timeout()).strip().upper() # Ensuring the input is uppercase for comparison
+        time_after = int(time.time())
         # Check if the answer is correct
         if user_answer == question["answer"]:
             print("Correct!")
-            users_score += 1
+            users_score += time_to_answer - (time_after - time_before)
+            max_points += time_to_answer
+            print("Points = ", users_score)
+            time.sleep(1)
+            print()
         else:
             print(f"Wrong! The correct answer was {question['answer']}.")
     except: 
@@ -35,7 +44,7 @@ for question in quiz_questions:
 
 
 # Print score
-print(f"You scored {users_score}/{len(quiz_questions)}")
+print(f"You got {users_score}/{max_points} points")
 
 # Goodbye message
 print("Thanks very much for playing the Pub Quiz!")
