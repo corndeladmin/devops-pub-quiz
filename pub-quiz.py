@@ -1,4 +1,5 @@
 from inputimeout import inputimeout
+import random
 import questions
 
 # Welcome message for the quiz
@@ -6,6 +7,9 @@ print("Welcome to the Pub Quiz!")
 
 # List of questions, options, and answers
 quiz_questions = questions.questions
+
+def generate_random_timeout(min=5, max=10):
+    return random.randint(min, max)
 
 # Loop through each question
 for question in quiz_questions:
@@ -16,7 +20,7 @@ for question in quiz_questions:
     
     # Get the user's answer
     try: 
-        user_answer = inputimeout("Your answer (A, B, C, D): ", 5).strip().upper() # Ensuring the input is uppercase for comparison
+        user_answer = inputimeout("Your answer (A, B, C, D): ", generate_random_timeout()).strip().upper() # Ensuring the input is uppercase for comparison
         # Check if the answer is correct
         if user_answer == question["answer"]:
             print("Correct!")
