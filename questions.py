@@ -6,7 +6,7 @@ questions = [
     },
      {
         "question": "What isn't the capital of France?",
-        "options": ["A) F", "B) Paris", "C) Lutetia", "D) Ostsektor"],
+        "options": ["A) F", "D) Paris", "C) Lutetia", "B) Ostsektor"],
         "answer": "B"
     },
     {
