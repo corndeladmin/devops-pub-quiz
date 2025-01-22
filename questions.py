@@ -29,5 +29,10 @@ questions = [
         "options": ["A) Lionel Messi", "B) The planet", "C) Argentina", "D) FIFA's bank account"],
         "answer": "B"
     },
+    {
+        "question": "What is B?",
+        "options": ["A) C, B) A, C) D, D) B"],
+        "answer": "B"
+    }
     # Learners can add more questions here following the same structure
 ]
