@@ -14,6 +14,11 @@ quiz_questions = [
         "answer": "B"
     },
     # Learners can add more questions here following the same structure
+     {
+        "question": "Who won the FIFA World Cup in 2022?",
+        "options": ["A) France", "B) Argentina", "C) Croatia", "D) Uruguay"],
+        "answer": "B"
+    },
 ]
 
 # Loop through each question
