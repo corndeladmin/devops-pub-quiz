@@ -8,6 +8,8 @@ print("Welcome to the Pub Quiz!")
 # List of questions, options, and answers
 quiz_questions = questions.questions
 
+users_score = 0
+
 def generate_random_timeout(min=5, max=10):
     return random.randint(min, max)
 
@@ -24,12 +26,16 @@ for question in quiz_questions:
         # Check if the answer is correct
         if user_answer == question["answer"]:
             print("Correct!")
+            users_score += 1
         else:
             print(f"Wrong! The correct answer was {question['answer']}.")
     except: 
         time_over = 'Your time is over!'
         print("\n I'm sorry, you're just really slow at this \n") 
 
+
+# Print score
+print(f"You scored {users_score}/{len(quiz_questions)}")
 
 # Goodbye message
 print("Thanks very much for playing the Pub Quiz!")
