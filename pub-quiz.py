@@ -33,15 +33,15 @@ for question in quiz_questions:
             print("Correct!")
             users_score += time_to_answer - (time_after - time_before)
             max_points += time_to_answer
-            print("Points = ", users_score)
-            time.sleep(1)
-            print()
         else:
             print(f"Wrong! The correct answer was {question['answer']}.")
     except: 
         time_over = 'Your time is over!'
-        print("\n I'm sorry, you're just really slow at this \n") 
-
+        print("\nI'm sorry, you're just really slow at this") 
+        
+    print("Points = ", users_score)
+    time.sleep(1)
+    print()
 
 # Print score
 print(f"You got {users_score}/{max_points} points")
