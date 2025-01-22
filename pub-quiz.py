@@ -37,7 +37,7 @@ for question in quiz_questions:
             print(f"Wrong! The correct answer was {question['answer']}.")
     except: 
         time_over = 'Your time is over!'
-        print("\nI'm sorry, you're just really slow at this") 
+        print("\nI'm sorry, you're just \033[3mreally\033[0m slow at this") 
         
     print("Points = ", users_score)
     time.sleep(1)
